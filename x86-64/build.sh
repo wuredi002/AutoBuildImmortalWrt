@@ -24,22 +24,28 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始编译..."
 
 # 定义所需安装的包列表 下列插件你都可以自行删减
 PACKAGES=""
+PACKAGES="$PACKAGES luci-app-netdata
+PACKAGES="$PACKAGES luci-theme-argon
+PACKAGES="$PACKAGES luci-app-turboacc
+PACKAGES="$PACKAGES luci-app-syncdial
 PACKAGES="$PACKAGES curl"
 PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-firewall-zh-cn"
-PACKAGES="$PACKAGES luci-i18n-filebrowser-zh-cn"
+# 服务——FileBrowser 用户名admin 密码admin
+PACKAGES="$PACKAGES luci-i18n-filebrowser-go-zh-cn"
 PACKAGES="$PACKAGES luci-app-argon-config"
 PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
-PACKAGES="$PACKAGES luci-i18n-opkg-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
-PACKAGES="$PACKAGES luci-app-openclash"
+PACKAGES="$PACKAGES luci-i18n-passwall2-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 PACKAGES="$PACKAGES openssh-sftp-server"
 # 增加几个必备组件 方便用户安装iStore
 PACKAGES="$PACKAGES fdisk"
 PACKAGES="$PACKAGES script-utils"
 PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
+PACKAGES="$PACKAGES luci-app-store
 
 # 判断是否需要编译 Docker 插件
 if [ "$INCLUDE_DOCKER" = "yes" ]; then
